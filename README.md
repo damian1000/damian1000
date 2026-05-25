@@ -45,7 +45,7 @@ Event-driven US equities analysis pipeline using Spring Boot 4 with pluggable ra
 
 Contributed to **Meridian** at JUXT (Grid Dynamics) — a derivatives-risk **solution accelerator** demoed to clients: a reproducible equity-derivatives risk platform supporting live valuation, Greeks, scenario analysis, and continuous intraday revaluation on a bitemporal datastore, across Kotlin, Python/QuantLib, and TypeScript.
 
-I **pair-built the live-ticking engine** (continuous revaluation as the market moves), **designed the scenario-analysis workflow** (shocked "what-if" revaluation), and built the **crash-only task-recovery model** that keeps long-running valuations safe across restarts. The codebase was written fully agentically with Claude Code — engineers drove architecture, design, and review.
+I **built the live-ticking engine** (continuous revaluation as the market moves), **designed the scenario-analysis workflow** (shocked "what-if" revaluation), and implemented the **crash-only task-recovery model** that keeps long-running valuations safe across restarts. The codebase was written fully agentically with Claude Code — engineers drove architecture, design, and review.
 
 Also contributed to **Stellar AI** — a 30+ repository AI-assistant platform (private) built primarily through agentic coding workflows with Claude Code. Built **platform-notifications-service**, its cross-platform notifications backbone for alerting, response capture, validation, and scoped delivery across distributed services.
 
