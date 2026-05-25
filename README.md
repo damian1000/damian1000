@@ -4,8 +4,6 @@ Senior / Staff Software Engineer with 20+ years building distributed trading, pr
 
 Specialise in high-throughput, event-driven systems across **front-office risk, pricing, orchestration, trade lifecycle, and post-trade processing** using Java, Kotlin, Scala, Kafka, FIX, OpenShift, AWS, and GCP.
 
-📧 damian.howard@gmail.com
-
 💼 https://linkedin.com/in/damianhoward  
 💻 https://github.com/damian1000
 
@@ -41,13 +39,13 @@ Event-driven US equities analysis pipeline using Spring Boot 4 with pluggable ra
 
 ---
 
-## Agentic engineering / AI-assisted systems
+## Agentic engineering
 
-Contributed to **Meridian** at JUXT (Grid Dynamics) — a derivatives-risk **solution accelerator** demoed to clients: a reproducible equity-derivatives risk platform supporting live valuation, Greeks, scenario analysis, and continuous intraday revaluation on a bitemporal datastore, across Kotlin, Python/QuantLib, and TypeScript.
+Contributed to **Meridian** at JUXT (Grid Dynamics) — a derivatives-risk **solution accelerator**: a reproducible equity-derivatives risk platform supporting live valuation, Greeks, scenario analysis, and continuous intraday revaluation on a bitemporal datastore, across Kotlin, Python/QuantLib, and TypeScript.
 
-I **built the live-ticking engine** (continuous revaluation as the market moves), **designed the scenario-analysis workflow** (shocked "what-if" revaluation), and implemented the **crash-only task-recovery model** that keeps long-running valuations safe across restarts. The codebase was written fully agentically with Claude Code — engineers drove architecture, design, and review.
+My contributions covered the **live-ticking engine** (continuous revaluation as the market moves), **scenario-analysis workflow** (shocked "what-if" revaluation), and **crash-only task-recovery model** that keeps long-running valuations safe across restarts. The codebase was built with Claude Code in an agentic workflow, with engineers driving architecture, design, and review.
 
-Also contributed to **Stellar AI** — a 30+ repository AI-assistant platform (private) built primarily through agentic coding workflows with Claude Code. Built **platform-notifications-service**, its cross-platform notifications backbone for alerting, response capture, validation, and scoped delivery across distributed services.
+Also contributed to **Stellar AI** — a private AI-assistant platform built primarily through agentic coding workflows with Claude Code. Contributions included a cross-platform notifications service for alerting, response capture, validation, and scoped delivery across distributed services.
 
 ---
 
@@ -61,9 +59,3 @@ Also contributed to **Stellar AI** — a 30+ repository AI-assistant platform (p
 - Low-latency and memory-sensitive systems
 - Risk orchestration, lifecycle, and post-trade processing
 - Agentic engineering workflows and AI-assisted development
-
----
-
-## Interests
-
-Distributed systems, market structure, trading technology, event-driven architecture, low-latency engineering, AI-assisted software development, and reproducible financial systems.
