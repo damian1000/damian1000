@@ -2,20 +2,20 @@
 
 Senior / Staff Software Engineer with 20+ years building distributed trading, pricing, and risk platforms for global investment banks. Currently at **Citi** via **JUXT** (part of **Grid Dynamics**), based in London.
 
-Specialise in high-throughput, event-driven systems across **front-office risk, pricing, orchestration, trade lifecycle, and post-trade processing** using Java, Kotlin, Scala, Kafka, FIX, OpenShift, AWS, and GCP.
+I specialise in high-throughput, event-driven systems across **front-office risk, pricing, and trade lifecycle workflows** using Java, Kotlin, Scala, Kafka, FIX, OpenShift, AWS, and GCP.
 
-💼 https://linkedin.com/in/damianhoward  
-💻 https://github.com/damian1000
+💼 [LinkedIn](https://linkedin.com/in/damianhoward)  
+💻 [GitHub](https://github.com/damian1000)
 
 ---
 
 ## Recent
 
-- **Citi** via JUXT — distributed cross-asset risk orchestration and intraday/EOD risk processing *(Mar 2025 – present)*
-- **Morgan Stanley** — front-office pricing & risk for CDS Index Options and Structured Credit *(Sept 2023 – Mar 2025)*
+- **Citi** via JUXT — distributed cross-asset risk orchestration and intraday/EOD risk processing *(Mar 2026 – present)*
+- **Morgan Stanley** — front-office pricing & risk for CDS Index Options and Structured Credit *(Sept 2023 – Feb 2026)*
 - **CMC Markets** — low-latency options pricing and FIX connectivity using Chronicle Map off-heap storage *(Mar 2023 – Sept 2023)*
 - **Blockchain.com** — institutional prime brokerage and treasury automation across Coinbase, Kraken, Binance, and Bitfinex *(Apr 2021 – Jan 2023)*
-- Earlier: **Goldman Sachs** (equities booking, securities lending), **Credit Suisse** (market risk, reference data platforms)
+- Earlier: multiple contracts at **Goldman Sachs** and **Credit Suisse** across equities booking, securities lending, market risk, and reference data platforms
 
 ---
 
@@ -41,21 +41,20 @@ Event-driven US equities analysis pipeline using Spring Boot 4 with pluggable ra
 
 ## Agentic engineering
 
-Contributed to **Meridian** at JUXT (Grid Dynamics) — a derivatives-risk **solution accelerator**: a reproducible equity-derivatives risk platform supporting live valuation, Greeks, scenario analysis, and continuous intraday revaluation on a bitemporal datastore, across Kotlin, Python/QuantLib, and TypeScript.
+Contributed to **Meridian** at JUXT (Grid Dynamics) — a derivatives-risk **solution accelerator** supporting live valuation, Greeks, scenario analysis, and continuous intraday revaluation on a bitemporal datastore.
 
-My contributions covered the **live-ticking engine** (continuous revaluation as the market moves), **scenario-analysis workflow** (shocked "what-if" revaluation), and **crash-only task-recovery model** that keeps long-running valuations safe across restarts. The codebase was built with Claude Code in an agentic workflow, with engineers driving architecture, design, and review.
+My work covered the **live-ticking engine**, **scenario-analysis workflow**, and **crash-only task-recovery model** for long-running valuations across Kotlin, Python/QuantLib, and TypeScript. Built with Claude Code in an agentic workflow.
 
-Also contributed to **Stellar AI** — a private AI-assistant platform built primarily through agentic coding workflows with Claude Code. Contributions included a cross-platform notifications service for alerting, response capture, validation, and scoped delivery across distributed services.
+Also contributed to **Stellar AI** — a private AI-assistant platform built primarily through agentic coding workflows with Claude Code. Delivered a cross-platform notifications service for alerting, response capture, validation, and scoped delivery across distributed services.
 
 ---
 
-## Core areas
+## Focus
 
-- Distributed trading, pricing, and risk systems
-- Event-driven microservices and orchestration
-- Front-office pricing and intraday risk workflows
-- High-throughput JVM systems (Java / Kotlin / Scala)
-- Kafka, FIX, REST, gRPC, asynchronous messaging
+- High-throughput JVM systems: Java, Kotlin, Scala
+- Event-driven architecture: Kafka, FIX, REST, gRPC
+- Front-office pricing, intraday risk, and trade lifecycle workflows
 - Low-latency and memory-sensitive systems
-- Risk orchestration, lifecycle, and post-trade processing
 - Agentic engineering workflows and AI-assisted development
+
+Happy to chat about JVM trading systems, risk platforms, or agentic engineering workflows — reach me on [LinkedIn](https://linkedin.com/in/damianhoward).
