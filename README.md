@@ -55,13 +55,13 @@ Converts bank CSV statement exports (Kiwibank NZ, Santander UK, Crypto.com) into
 
 ---
 
-## Agentic engineering
+## Agentic engineering outside client work
 
-Contributed to **Meridian** at JUXT (Grid Dynamics) — a derivatives-risk **solution accelerator** supporting live valuation, Greeks, scenario analysis, and continuous intraday revaluation on a bitemporal datastore.
+Contributed to **[Meridian](https://www.juxt.pro/meridian/)**, JUXT's publicly announced equity-derivatives post-trade risk accelerator. It supports valuation, Greeks, scenario analysis, and continuous ticking risk on a bitemporal datastore.
 
-My work covered the **live-ticking engine**, **scenario-analysis workflow**, and **crash-only task-recovery model** for long-running valuations across Kotlin, Python/QuantLib, and TypeScript. Built with Claude Code in an agentic workflow.
+My work covered the **ticking-risk engine**, **scenario-analysis workflow**, and resilient task recovery for long-running valuations across Kotlin, Python/QuantLib, and TypeScript, built with Claude Code in an agentic workflow.
 
-Also contributed to **Stellar AI** — a private AI-assistant platform built primarily through agentic coding workflows with Claude Code. Delivered a cross-platform notifications service for alerting, response capture, validation, and scoped delivery across distributed services.
+Also contributed to a privately developed AI-assistant platform, delivering a cross-platform notifications service for alerting, validated response capture, and scoped delivery across distributed services.
 
 ---
 
