@@ -49,6 +49,10 @@ Multi-venue position aggregation across Binance and Bitfinex with HMAC-signed RE
 
 Event-driven US equities analysis pipeline using Spring Boot 4 with pluggable ranking stages, screening workflows, and Excel export.
 
+### [bank-csv-to-qif](https://github.com/damian1000/bank-csv-to-qif)
+
+Converts bank CSV statement exports (Kiwibank NZ, Santander UK, Crypto.com) into QIF for Quicken / MoneyDance / GnuCash. Kotlin, `BigDecimal` amounts, per-bank fixture tests covering payee-cleanup rules.
+
 ---
 
 ## Agentic engineering
