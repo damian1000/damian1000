@@ -29,9 +29,17 @@ Thread-safe limit order book in Kotlin with time-priority modify support. Includ
 
 Small Kotlin blockchain demonstrating proof-of-work mining, UTXO accounting, and RSA-signed transactions. Pure JDK + Kotlin, no third-party crypto library.
 
+### [sudoku-dancing-links](https://github.com/damian1000/sudoku-dancing-links)
+
+Knuth's Algorithm X (Dancing Links) Sudoku solver in Java alongside a naive backtracking baseline. ~20× perf gap on hard puzzles, identical solutions verified by JUnit.
+
 ### [kafka-microservices-demo](https://github.com/damian1000/kafka-microservices-demo)
 
 Spring Boot 4 + Kafka 4 quote/order workflow demonstrating non-blocking retry with `@RetryableTopic`, automatic dead-letter routing, and event-driven microservice patterns.
+
+### [kafka-streams-patterns](https://github.com/damian1000/kafka-streams-patterns)
+
+Four Kafka Streams DSL topologies — wordcount, tumbling-window aggregation, KStream–KStream join, and KStream–KTable enrichment join — with a single-node KRaft docker-compose for local runs.
 
 ### [portfolio-manager](https://github.com/damian1000/portfolio-manager)
 
