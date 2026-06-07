@@ -25,6 +25,10 @@ I specialise in high-throughput, event-driven systems across **front-office risk
 
 Thread-safe limit order book in Kotlin with time-priority modify support. Includes JMH benchmarks on JDK 25 with nanosecond-scale best-bid lookups and sub-microsecond order operations.
 
+### [kotlin-blockchain](https://github.com/damian1000/kotlin-blockchain)
+
+Small Kotlin blockchain demonstrating proof-of-work mining, UTXO accounting, and RSA-signed transactions. Pure JDK + Kotlin, no third-party crypto library.
+
 ### [kafka-microservices-demo](https://github.com/damian1000/kafka-microservices-demo)
 
 Spring Boot 4 + Kafka 4 quote/order workflow demonstrating non-blocking retry with `@RetryableTopic`, automatic dead-letter routing, and event-driven microservice patterns.
