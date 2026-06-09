@@ -1,76 +1,93 @@
 # Damian Howard
 
-Senior / Staff Software Engineer with 20+ years building distributed trading, pricing, and risk platforms for global investment banks. Currently at **Citi** via **JUXT** (part of **Grid Dynamics**), based in London.
+Senior / Staff Software Engineer in London with 20+ years of experience building
+trading, pricing, risk, and post-trade systems for investment banks and financial
+technology firms.
 
-I specialise in high-throughput, event-driven systems across **front-office risk, pricing, and trade lifecycle workflows** using Java, Kotlin, Scala, Kafka, FIX, OpenShift, AWS, and GCP.
+Currently working at **Citi via JUXT** (part of **Grid Dynamics**), focused on
+distributed cross-asset risk orchestration and intraday/EOD risk processing.
 
-💼 [LinkedIn](https://linkedin.com/in/damianhoward)  
-💻 [GitHub](https://github.com/damian1000)
+[LinkedIn](https://linkedin.com/in/damianhoward) | [GitHub](https://github.com/damian1000)
 
----
+## What I Work On
 
-## Recent
+- Front-office pricing, risk, and trade-lifecycle platforms
+- High-throughput and event-driven JVM systems
+- Low-latency, concurrent, and memory-sensitive applications
+- Kafka, FIX, REST, and gRPC integration
+- Production engineering across Java, Kotlin, Scala, cloud, and containers
 
-- **Citi** via JUXT — distributed cross-asset risk orchestration and intraday/EOD risk processing *(Mar 2026 – present)*
-- **Morgan Stanley** — front-office pricing & risk for CDS Index Options and Structured Credit *(Sept 2023 – Feb 2026)*
-- **CMC Markets** — low-latency options pricing and FIX connectivity using Chronicle Map off-heap storage *(Mar 2023 – Sept 2023)*
-- **Blockchain.com** — institutional prime brokerage and treasury automation across Coinbase, Kraken, Binance, and Bitfinex *(Apr 2021 – Jan 2023)*
-- Earlier: multiple contracts at **Goldman Sachs** and **Credit Suisse** across equities booking, securities lending, market risk, and reference data platforms
+I am particularly interested in senior individual-contributor roles in hedge
+funds, systematic trading firms, market makers, and investment-bank engineering
+teams where market-domain knowledge and hands-on technical depth both matter.
 
----
+## Selected Experience
 
-## Selected open-source
+- **Citi via JUXT** — cross-asset risk orchestration and intraday/EOD risk
+  processing *(March 2026 - present)*
+- **Morgan Stanley** — front-office pricing and risk for CDS Index Options and
+  Structured Credit *(September 2023 - February 2026)*
+- **CMC Markets** — low-latency options pricing and FIX connectivity using
+  Chronicle Map off-heap storage *(March 2023 - September 2023)*
+- **Blockchain.com** — institutional prime brokerage and treasury automation
+  across Coinbase, Kraken, Binance, and Bitfinex *(April 2021 - January 2023)*
+- **Goldman Sachs and Credit Suisse** — earlier engagements across equities
+  booking, securities lending, market risk, and reference-data platforms
+
+## Selected Engineering Work
 
 ### [kotlin-orderbook](https://github.com/damian1000/kotlin-orderbook)
 
-Thread-safe limit order book in Kotlin with time-priority modify support. Includes JMH benchmarks on JDK 25 with nanosecond-scale best-bid lookups and sub-microsecond order operations.
-
-### [kotlin-blockchain](https://github.com/damian1000/kotlin-blockchain)
-
-Small Kotlin blockchain demonstrating proof-of-work mining, UTXO accounting, and RSA-signed transactions. Pure JDK + Kotlin, no third-party crypto library.
-
-### [sudoku-dancing-links](https://github.com/damian1000/sudoku-dancing-links)
-
-Knuth's Algorithm X (Dancing Links) Sudoku solver in Java alongside a naive backtracking baseline. ~20× perf gap on hard puzzles, identical solutions verified by JUnit.
-
-### [kafka-microservices-demo](https://github.com/damian1000/kafka-microservices-demo)
-
-Spring Boot 4 + Kafka 4 quote/order workflow demonstrating non-blocking retry with `@RetryableTopic`, automatic dead-letter routing, and event-driven microservice patterns.
-
-### [kafka-streams-patterns](https://github.com/damian1000/kafka-streams-patterns)
-
-Four Kafka Streams DSL topologies — wordcount, tumbling-window aggregation, KStream–KStream join, and KStream–KTable enrichment join — with a single-node KRaft docker-compose for local runs.
+Thread-safe limit-order-book data structure in Kotlin. It preserves FIFO priority
+when order size changes, protects book invariants with a read/write lock, and
+includes deterministic concurrency stress tests and JMH benchmarks. The README
+documents complexity and distinguishes the implementation from a production
+matching engine.
 
 ### [portfolio-manager](https://github.com/damian1000/portfolio-manager)
 
-Two venue-local exchange clients (Binance and Bitfinex) with HMAC-signed REST integration, mockable HTTP boundary, and a dry-run-by-default withdrawal CLI with redacted audit logging. Kotlin.
+Kotlin clients for authenticated Binance and Bitfinex APIs, including venue-local
+HMAC signing and mockable HTTP boundaries. The Bitfinex withdrawal workflow is
+dry-run by default and requires explicit confirmation, with destination redaction
+and local audit logging.
 
 ### [stocks-analysis-us](https://github.com/damian1000/stocks-analysis-us)
 
-Event-driven US equities analysis pipeline using Spring Boot 4 with pluggable ranking stages, screening workflows, and Excel export.
+Spring Boot US-equities screener with six synchronous, in-process pipeline stages,
+PostgreSQL/Flyway persistence, configurable PEG-style ranking, and Excel export.
+Tests include fixture-driven source parsing and Testcontainers validation against
+PostgreSQL 17.
 
-### [bank-csv-to-qif](https://github.com/damian1000/bank-csv-to-qif)
+### [kafka-microservices-demo](https://github.com/damian1000/kafka-microservices-demo)
 
-Converts bank CSV statement exports (Kiwibank NZ, Santander UK, Crypto.com) into QIF for Quicken / MoneyDance / GnuCash. Kotlin, `BigDecimal` amounts, per-bank fixture tests covering payee-cleanup rules.
+Two-service Spring Boot and Kafka example covering synchronous quote requests,
+asynchronous order events, non-blocking retries, and dead-letter routing. Includes
+isolated unit tests and CI coverage across both Gradle modules.
 
----
+Other repositories cover
+[Kafka Streams patterns](https://github.com/damian1000/kafka-streams-patterns),
+[Dancing Links / Algorithm X](https://github.com/damian1000/sudoku-dancing-links),
+[proof-of-work and UTXO mechanics](https://github.com/damian1000/kotlin-blockchain),
+and a [bank CSV to QIF converter](https://github.com/damian1000/bank-csv-to-qif).
 
-## Agentic engineering outside client work
+## Public Work at JUXT
 
-Contributed to **[Meridian](https://www.juxt.pro/meridian/)**, JUXT's publicly announced equity-derivatives post-trade risk accelerator. It supports valuation, Greeks, scenario analysis, and continuous ticking risk on a bitemporal datastore.
+I contributed to [Meridian](https://www.juxt.pro/meridian/), JUXT's publicly
+announced equity-derivatives post-trade risk accelerator. Meridian supports
+valuation, Greeks, scenario analysis, and continuously updating risk on a
+bitemporal datastore.
 
-My work covered the **ticking-risk engine**, **scenario-analysis workflow**, and resilient task recovery for long-running valuations across Kotlin, Python/QuantLib, and TypeScript, built with Claude Code in an agentic workflow.
+My work covered the ticking-risk engine, scenario-analysis workflow, and resilient
+recovery of long-running valuation tasks across Kotlin, Python/QuantLib, and
+TypeScript.
 
-Also contributed to a privately developed AI-assistant platform, delivering a cross-platform notifications service for alerting, validated response capture, and scoped delivery across distributed services.
+## Technology
 
----
+- **Languages:** Java, Kotlin, Scala, Python, TypeScript
+- **Trading and integration:** FIX, Kafka, REST, gRPC
+- **Platforms:** OpenShift, AWS, GCP, Docker
+- **Domains:** pricing, risk, trade lifecycle, post-trade, prime brokerage,
+  treasury automation
 
-## Focus
-
-- High-throughput JVM systems: Java, Kotlin, Scala
-- Event-driven architecture: Kafka, FIX, REST, gRPC
-- Front-office pricing, intraday risk, and trade lifecycle workflows
-- Low-latency and memory-sensitive systems
-- Agentic engineering workflows and AI-assisted development
-
-Happy to chat about JVM trading systems, risk platforms, or agentic engineering workflows — reach me on [LinkedIn](https://linkedin.com/in/damianhoward).
+For professional enquiries, contact me through
+[LinkedIn](https://linkedin.com/in/damianhoward).
