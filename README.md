@@ -43,7 +43,7 @@ Four Kafka Streams DSL topologies — wordcount, tumbling-window aggregation, KS
 
 ### [portfolio-manager](https://github.com/damian1000/portfolio-manager)
 
-Multi-venue position aggregation across Binance and Bitfinex with HMAC-signed REST integration, resilient transport abstractions, and mockable exchange connectivity. Kotlin.
+Two venue-local exchange clients (Binance and Bitfinex) with HMAC-signed REST integration, mockable HTTP boundary, and a dry-run-by-default withdrawal CLI with redacted audit logging. Kotlin.
 
 ### [stocks-analysis-us](https://github.com/damian1000/stocks-analysis-us)
 
