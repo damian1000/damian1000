@@ -15,11 +15,7 @@ distributed cross-asset risk orchestration and intraday/EOD risk processing.
 - High-throughput and event-driven JVM systems
 - Low-latency, concurrent, and memory-sensitive applications
 - Kafka, FIX, REST, and gRPC integration
-- Production engineering across Java, Kotlin, Scala, cloud, and containers
-
-I am particularly interested in senior individual-contributor roles in hedge
-funds, systematic trading firms, market makers, and investment-bank engineering
-teams where market-domain knowledge and hands-on technical depth both matter.
+- AI-assisted engineering workflows for implementation, testing, and review
 
 ## Selected Experience
 
@@ -33,6 +29,22 @@ teams where market-domain knowledge and hands-on technical depth both matter.
   across Coinbase, Kraken, Binance, and Bitfinex *(April 2021 - January 2023)*
 - **Goldman Sachs and Credit Suisse** — earlier engagements across equities
   booking, securities lending, market risk, and reference-data platforms
+
+## AI-Assisted Engineering
+
+Contributed to **[Meridian](https://www.juxt.pro/meridian/)**, JUXT's
+equity-derivatives post-trade risk accelerator. Meridian supports valuation,
+Greeks, scenario analysis, and continuously updating risk on a bitemporal
+datastore.
+
+My work covered the **ticking-risk engine**, **scenario-analysis workflow**, and
+resilient recovery of long-running valuation tasks across Kotlin,
+Python/QuantLib, and TypeScript. I used Claude Code as part of an agentic
+engineering workflow spanning implementation, testing, and review.
+
+I also contributed to a privately developed AI-assistant platform, delivering a
+cross-platform notifications service for alerting, validated response capture,
+and scoped delivery across distributed services.
 
 ## Selected Engineering Work
 
@@ -69,17 +81,6 @@ Other repositories cover
 [Dancing Links / Algorithm X](https://github.com/damian1000/sudoku-dancing-links),
 [proof-of-work and UTXO mechanics](https://github.com/damian1000/kotlin-blockchain),
 and a [bank CSV to QIF converter](https://github.com/damian1000/bank-csv-to-qif).
-
-## Public Work at JUXT
-
-I contributed to [Meridian](https://www.juxt.pro/meridian/), JUXT's publicly
-announced equity-derivatives post-trade risk accelerator. Meridian supports
-valuation, Greeks, scenario analysis, and continuously updating risk on a
-bitemporal datastore.
-
-My work covered the ticking-risk engine, scenario-analysis workflow, and resilient
-recovery of long-running valuation tasks across Kotlin, Python/QuantLib, and
-TypeScript.
 
 ## Technology
 
