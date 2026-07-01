@@ -48,7 +48,7 @@ and scoped delivery across distributed services.
 
 ## Selected Engineering Work
 
-### [kotlin-orderbook](https://github.com/damian1000/kotlin-orderbook)
+### [orderbook](https://github.com/damian1000/orderbook)
 
 **▶ Live: https://orderbook.damianhoward.com** — submit an order and watch it
 match resting liquidity in real time.
