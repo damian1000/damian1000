@@ -60,6 +60,14 @@ web front end over Server-Sent Events. Backed by deterministic concurrency stres
 tests, JMH benchmarks, and a 90% coverage gate under CI, CodeQL, and dependency
 review.
 
+### [risk-engine](https://github.com/damian1000/risk-engine)
+
+A risk framework for a vanilla equity option: closed-form Black-Scholes pricing
+and Greeks, hand-written in Kotlin rather than delegated to a pricing library.
+Correctness is validated two independent ways — golden-value tests against a
+published textbook reference, and property-based tests (put-call parity, delta
+bounds, monotonicity) generating thousands of cases per invariant.
+
 ### [portfolio-manager](https://github.com/damian1000/portfolio-manager)
 
 Kotlin clients for authenticated Binance and Bitfinex APIs, including venue-local
@@ -74,13 +82,9 @@ PostgreSQL/Flyway persistence, configurable PEG-style ranking, and Excel export.
 Tests include fixture-driven source parsing and Testcontainers validation against
 PostgreSQL 17.
 
-### [kafka-microservices-demo](https://github.com/damian1000/kafka-microservices-demo)
-
-Two-service Spring Boot and Kafka example covering synchronous quote requests,
-asynchronous order events, non-blocking retries, and dead-letter routing. Includes
-isolated unit tests and CI coverage across both Gradle modules.
-
 Other repositories cover
+[Kafka microservices](https://github.com/damian1000/kafka-microservices-demo)
+(retries, dead-letter routing),
 [Kafka Streams patterns](https://github.com/damian1000/kafka-streams-patterns),
 [Dancing Links / Algorithm X](https://github.com/damian1000/sudoku-dancing-links),
 [proof-of-work and UTXO mechanics](https://github.com/damian1000/kotlin-blockchain),
