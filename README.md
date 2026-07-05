@@ -54,16 +54,19 @@ and scoped delivery across distributed services.
 match resting liquidity in real time.
 
 A thread-safe limit order book and price-time-priority matching engine in Kotlin.
-It preserves FIFO time priority across size changes, offers interchangeable
-lock-based and single-writer concurrency strategies, and drives a dependency-free
-web front end over Server-Sent Events. Backed by deterministic concurrency stress
-tests, JMH benchmarks, and a 90% coverage gate under CI, CodeQL, and dependency
-review.
+It preserves FIFO time priority across size changes and offers three
+interchangeable concurrency strategies — lock-based, single-writer, and an LMAX
+Disruptor busy-spin ring buffer that wins every contended JMH workload (about 6×
+the lock's throughput on write-heavy load, with far tighter variance) — behind a
+dependency-free web front end over Server-Sent Events. Backed by deterministic
+concurrency stress tests, tail-latency (p50/p99/p99.9) and allocation benchmarks,
+and a 90% coverage gate under CI, CodeQL, and dependency review.
 
 ### [risk-engine](https://github.com/damian1000/risk-engine)
 
 A risk framework for a vanilla equity option: closed-form Black-Scholes pricing
-and Greeks, hand-written in Kotlin rather than delegated to a pricing library.
+with bump-and-reprice Greeks, hand-written in Kotlin rather than delegated to a
+pricing library.
 Correctness is validated two independent ways — golden-value tests against a
 published textbook reference, and property-based tests (put-call parity, delta
 bounds, monotonicity) generating thousands of cases per invariant.
