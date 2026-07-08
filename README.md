@@ -64,6 +64,9 @@ and a 90% coverage gate under CI, CodeQL, and dependency review.
 
 ### [risk-engine](https://github.com/damian1000/risk-engine)
 
+**▶ Live: https://risk.damianhoward.com** — edit a book and market, and watch
+the valuation, Greeks, both VaR methods, and the day's PnL recompute.
+
 A risk framework for a vanilla equity option: closed-form Black-Scholes pricing
 with bump-and-reprice Greeks, hand-written in Kotlin rather than delegated to a
 pricing library.
