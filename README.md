@@ -74,6 +74,20 @@ Correctness is validated two independent ways — golden-value tests against a
 published textbook reference, and property-based tests (put-call parity, delta
 bounds, monotonicity) generating thousands of cases per invariant.
 
+### [trading-system](https://github.com/damian1000/trading-system)
+
+**▶ Live: https://trading.damianhoward.com** — watch positions, risk, and PnL
+update as orders fill on the live order book.
+
+The integration layer over the two systems above, consumed as versioned
+libraries rather than rebuilt. A plain kafka-clients consumer takes the order
+book's fill stream, books net positions into an Oracle Autonomous Database
+(Flyway-managed, exact-decimal upserts), reprices the book through risk-engine
+on every fill, and pushes each snapshot to the dashboard over Server-Sent
+Events. Poison records route to a dead-letter topic with error and provenance
+headers after bounded retries — a flow integration-tested against a real broker
+and a real Oracle instance via Testcontainers, under the same 90% coverage gate.
+
 ### [portfolio-manager](https://github.com/damian1000/portfolio-manager)
 
 Kotlin clients for authenticated Binance and Bitfinex APIs, including venue-local
