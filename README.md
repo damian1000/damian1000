@@ -104,6 +104,7 @@ PostgreSQL 17.
 
 Other repositories cover
 [Kafka Streams patterns](https://github.com/damian1000/kafka-streams-patterns),
+[real instrument quotes for the live order book](https://github.com/damian1000/market-data),
 [Dancing Links / Algorithm X](https://github.com/damian1000/sudoku-dancing-links),
 [proof-of-work and UTXO mechanics](https://github.com/damian1000/kotlin-blockchain),
 and a [bank CSV to QIF converter](https://github.com/damian1000/bank-csv-to-qif).
