@@ -103,8 +103,6 @@ Tests include fixture-driven source parsing and Testcontainers validation agains
 PostgreSQL 17.
 
 Other repositories cover
-[Kafka microservices](https://github.com/damian1000/kafka-microservices-demo)
-(retries, dead-letter routing),
 [Kafka Streams patterns](https://github.com/damian1000/kafka-streams-patterns),
 [Dancing Links / Algorithm X](https://github.com/damian1000/sudoku-dancing-links),
 [proof-of-work and UTXO mechanics](https://github.com/damian1000/kotlin-blockchain),
