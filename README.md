@@ -88,6 +88,15 @@ Events. Poison records route to a dead-letter topic with error and provenance
 headers after bounded retries — a flow integration-tested against a real broker
 and a real Oracle instance via Testcontainers, under the same 90% coverage gate.
 
+### [trading-desk](https://github.com/damian1000/trading-desk)
+
+**▶ Live: https://desk.damianhoward.com** — orderbook, risk-engine, and
+trading-system in one shell, no separate tabs to juggle.
+
+A reverse-proxy gateway that mounts the three live sites above under one
+origin, stripping path prefixes and streaming responses so each service's
+own Server-Sent Events keep working unbuffered end to end.
+
 ### [portfolio-manager](https://github.com/damian1000/portfolio-manager)
 
 Kotlin clients for authenticated Binance and Bitfinex APIs, including venue-local
