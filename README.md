@@ -30,29 +30,57 @@ distributed cross-asset risk orchestration and intraday/EOD risk processing.
 - **Goldman Sachs and Credit Suisse** — earlier engagements across equities
   booking, securities lending, market risk, and reference-data platforms
 
-## Selected Engineering Work
+## Front-Office Trading Platform
 
-A live trading stack: a limit order book with three concurrency strategies (an LMAX Disruptor
-ring buffer beats a read/write lock by roughly 6× under contention), a Black-Scholes risk engine
-cross-validated against OpenGamma Strata, and a Kafka-based integration layer turning fills into
-live positions, VaR, and PnL. All three run together in
-[trading-desk](https://github.com/damian1000/trading-desk):
+An end-to-end slice of a front-office platform — live market data, a matching engine, post-trade
+booking, risk, and one presentation layer over all of it. Five separately deployed, separately
+tested systems. `trading-system` and `trading-desk` depend on `orderbook` and `risk-engine` as
+versioned libraries rather than duplicating them — bounded contexts composed, not merged into one
+codebase.
 
 **▶ Explore it live: https://desk.damianhoward.com**
 
-Individually: [orderbook](https://github.com/damian1000/orderbook),
-[risk-engine](https://github.com/damian1000/risk-engine),
-[trading-system](https://github.com/damian1000/trading-system).
+**How it fits together:** a data pipeline and a presentation layer. Data: `market-data` anchors
+`orderbook`'s book to a real price; every match publishes a fill to Kafka; `trading-system`
+consumes that stream, books the position, and reprices it by calling `risk-engine` as a library.
+Presentation: `trading-desk` reverse-proxies `orderbook`'s live book, `risk-engine`'s own
+interactive pricer, and `trading-system`'s dashboard as tabs in one shell, so the whole platform
+is one browser tab instead of four.
 
-Also: [portfolio-manager](https://github.com/damian1000/portfolio-manager) (dry-run-by-default
-exchange clients for Binance and Bitfinex) and
-[stocks-analysis-us](https://github.com/damian1000/stocks-analysis-us) (a six-stage
-fundamentals-ranking pipeline for US equities). Smaller repos:
-[kafka-streams-patterns](https://github.com/damian1000/kafka-streams-patterns),
-[market-data](https://github.com/damian1000/market-data),
-[sudoku-dancing-links](https://github.com/damian1000/sudoku-dancing-links),
-[kotlin-blockchain](https://github.com/damian1000/kotlin-blockchain), and
-[bank-csv-to-qif](https://github.com/damian1000/bank-csv-to-qif).
+- **[trading-desk](https://github.com/damian1000/trading-desk)** — the link above: a
+  reverse-proxy gateway and the single entry point into the three live services.
+- **[market-data](https://github.com/damian1000/market-data)** — pulls real quotes from Yahoo
+  Finance and serves the last-good snapshot, so a transient provider failure never blanks the
+  live book it feeds.
+- **[orderbook](https://github.com/damian1000/orderbook)** — a thread-safe limit order book with
+  three interchangeable concurrency strategies, JMH-benchmarked to the nanosecond; the LMAX
+  Disruptor implementation beats a read/write lock by roughly 6× under contention. Seeds itself
+  from `market-data`'s real quotes and publishes every fill to Kafka.
+- **[risk-engine](https://github.com/damian1000/risk-engine)** — Black-Scholes pricing and Greeks
+  hand-written in Kotlin, cross-validated against OpenGamma Strata as an independent oracle. Runs
+  both as its own live pricer and as the library `trading-system` calls on every fill.
+- **[trading-system](https://github.com/damian1000/trading-system)** — consumes `orderbook`'s
+  fill stream off Kafka, books net positions into an Oracle Autonomous Database, reprices through
+  `risk-engine`, and pushes live positions, VaR, and PnL to a dashboard. Poison messages route to
+  a dead-letter topic after bounded retries.
+
+## Other Engineering Work
+
+- **[portfolio-manager](https://github.com/damian1000/portfolio-manager)** — authenticated
+  exchange clients for Binance and Bitfinex, with venue-local HMAC signing and a withdrawal
+  workflow that's dry-run by default and requires explicit confirmation before it touches money.
+- **[stocks-analysis-us](https://github.com/damian1000/stocks-analysis-us)** — a six-stage,
+  event-driven pipeline that builds a ranked US equity universe from public fundamentals and
+  exports it to Excel.
+
+Smaller repos:
+[kafka-streams-patterns](https://github.com/damian1000/kafka-streams-patterns) (four Kafka
+Streams topologies),
+[sudoku-dancing-links](https://github.com/damian1000/sudoku-dancing-links) (Knuth's Dancing
+Links vs. naive backtracking),
+[kotlin-blockchain](https://github.com/damian1000/kotlin-blockchain) (proof-of-work and UTXO
+mechanics), and [bank-csv-to-qif](https://github.com/damian1000/bank-csv-to-qif) (a CSV-to-QIF
+converter for legacy finance tools).
 
 ## AI-Assisted Engineering
 
