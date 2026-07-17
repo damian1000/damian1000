@@ -30,23 +30,9 @@ distributed cross-asset risk orchestration and intraday/EOD risk processing.
 - **Goldman Sachs and Credit Suisse** — earlier engagements across equities
   booking, securities lending, market risk, and reference-data platforms
 
-## AI-Assisted Engineering
-
-Contributed to **[Meridian](https://www.juxt.pro/meridian/)**, JUXT's
-equity-derivatives post-trade risk accelerator. Meridian supports valuation,
-Greeks, scenario analysis, and continuously updating risk on a bitemporal
-datastore.
-
-My work covered the **ticking-risk engine**, **scenario-analysis workflow**, and
-resilient recovery of long-running valuation tasks across Kotlin,
-Python/QuantLib, and TypeScript. I used Claude Code as part of an agentic
-engineering workflow spanning implementation, testing, and review.
-
-I also contributed to a privately developed AI-assistant platform, delivering a
-cross-platform notifications service for alerting, validated response capture,
-and scoped delivery across distributed services.
-
 ## Selected Engineering Work
+
+Live trading infrastructure, built end-to-end outside any employer's codebase:
 
 ### [orderbook](https://github.com/damian1000/orderbook)
 
@@ -117,6 +103,23 @@ Other repositories cover
 [Dancing Links / Algorithm X](https://github.com/damian1000/sudoku-dancing-links),
 [proof-of-work and UTXO mechanics](https://github.com/damian1000/kotlin-blockchain),
 and a [bank CSV to QIF converter](https://github.com/damian1000/bank-csv-to-qif).
+
+## AI-Assisted Engineering
+
+Contributed to **[Meridian](https://www.juxt.pro/meridian/)**, JUXT's
+equity-derivatives post-trade risk accelerator. Meridian supports valuation,
+Greeks, scenario analysis, and continuously updating risk on a bitemporal
+datastore.
+
+My work covered the **ticking-risk engine**, **scenario-analysis workflow**, and
+resilient recovery of long-running valuation tasks across Kotlin,
+Python/QuantLib, and TypeScript. I used Claude Code as part of an agentic
+engineering workflow spanning implementation, testing, and review — the same
+workflow behind the repositories above.
+
+I also contributed to a privately developed AI-assistant platform, delivering a
+cross-platform notifications service for alerting, validated response capture,
+and scoped delivery across distributed services.
 
 ## Technology
 
