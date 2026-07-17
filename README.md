@@ -30,6 +30,30 @@ distributed cross-asset risk orchestration and intraday/EOD risk processing.
 - **Goldman Sachs and Credit Suisse** — earlier engagements across equities
   booking, securities lending, market risk, and reference-data platforms
 
+## Selected Engineering Work
+
+A live trading stack: a limit order book with three concurrency strategies (an LMAX Disruptor
+ring buffer beats a read/write lock by roughly 6× under contention), a Black-Scholes risk engine
+cross-validated against OpenGamma Strata, and a Kafka-based integration layer turning fills into
+live positions, VaR, and PnL. All three run together in
+[trading-desk](https://github.com/damian1000/trading-desk):
+
+**▶ Explore it live: https://desk.damianhoward.com**
+
+Individually: [orderbook](https://github.com/damian1000/orderbook),
+[risk-engine](https://github.com/damian1000/risk-engine),
+[trading-system](https://github.com/damian1000/trading-system).
+
+Also: [portfolio-manager](https://github.com/damian1000/portfolio-manager) (dry-run-by-default
+exchange clients for Binance and Bitfinex) and
+[stocks-analysis-us](https://github.com/damian1000/stocks-analysis-us) (a six-stage
+fundamentals-ranking pipeline for US equities). Smaller repos cover
+[Kafka Streams patterns](https://github.com/damian1000/kafka-streams-patterns),
+[real instrument quotes](https://github.com/damian1000/market-data),
+[Dancing Links](https://github.com/damian1000/sudoku-dancing-links),
+[blockchain internals](https://github.com/damian1000/kotlin-blockchain), and a
+[bank CSV to QIF converter](https://github.com/damian1000/bank-csv-to-qif).
+
 ## AI-Assisted Engineering
 
 Contributed to **[Meridian](https://www.juxt.pro/meridian/)**, JUXT's
@@ -40,83 +64,12 @@ datastore.
 My work covered the **ticking-risk engine**, **scenario-analysis workflow**, and
 resilient recovery of long-running valuation tasks across Kotlin,
 Python/QuantLib, and TypeScript. I used Claude Code as part of an agentic
-engineering workflow spanning implementation, testing, and review.
+engineering workflow spanning implementation, testing, and review — the same
+workflow behind the repositories above.
 
 I also contributed to a privately developed AI-assistant platform, delivering a
 cross-platform notifications service for alerting, validated response capture,
 and scoped delivery across distributed services.
-
-## Selected Engineering Work
-
-### [orderbook](https://github.com/damian1000/orderbook)
-
-**▶ Live: https://orderbook.damianhoward.com** — submit an order and watch it
-match resting liquidity in real time.
-
-A thread-safe limit order book and price-time-priority matching engine in Kotlin.
-It preserves FIFO time priority across size changes and offers three
-interchangeable concurrency strategies — lock-based, single-writer, and an LMAX
-Disruptor busy-spin ring buffer that wins every contended JMH workload (about 6×
-the lock's throughput on write-heavy load, with far tighter variance) — behind a
-dependency-free web front end over Server-Sent Events. Backed by deterministic
-concurrency stress tests, tail-latency (p50/p99/p99.9) and allocation benchmarks,
-and a 90% coverage gate under CI, CodeQL, and dependency review.
-
-### [risk-engine](https://github.com/damian1000/risk-engine)
-
-**▶ Live: https://risk.damianhoward.com** — edit a book and market, and watch
-the valuation, Greeks, both VaR methods, and the day's PnL recompute.
-
-A risk framework for a vanilla equity option: closed-form Black-Scholes pricing
-with bump-and-reprice Greeks, hand-written in Kotlin rather than delegated to a
-pricing library.
-Correctness is validated two independent ways — golden-value tests against a
-published textbook reference, and property-based tests (put-call parity, delta
-bounds, monotonicity) generating thousands of cases per invariant.
-
-### [trading-system](https://github.com/damian1000/trading-system)
-
-**▶ Live: https://trading.damianhoward.com** — watch positions, risk, and PnL
-update as orders fill on the live order book.
-
-The integration layer over the two systems above, consumed as versioned
-libraries rather than rebuilt. A plain kafka-clients consumer takes the order
-book's fill stream, books net positions into an Oracle Autonomous Database
-(Flyway-managed, exact-decimal upserts), reprices the book through risk-engine
-on every fill, and pushes each snapshot to the dashboard over Server-Sent
-Events. Poison records route to a dead-letter topic with error and provenance
-headers after bounded retries — a flow integration-tested against a real broker
-and a real Oracle instance via Testcontainers, under the same 90% coverage gate.
-
-### [trading-desk](https://github.com/damian1000/trading-desk)
-
-**▶ Live: https://desk.damianhoward.com** — orderbook, risk-engine, and
-trading-system in one shell, no separate tabs to juggle.
-
-A reverse-proxy gateway that mounts the three live sites above under one
-origin, stripping path prefixes and streaming responses so each service's
-own Server-Sent Events keep working unbuffered end to end.
-
-### [portfolio-manager](https://github.com/damian1000/portfolio-manager)
-
-Kotlin clients for authenticated Binance and Bitfinex APIs, including venue-local
-HMAC signing and mockable HTTP boundaries. The Bitfinex withdrawal workflow is
-dry-run by default and requires explicit confirmation, with destination redaction
-and local audit logging.
-
-### [stocks-analysis-us](https://github.com/damian1000/stocks-analysis-us)
-
-Spring Boot US-equities screener with six synchronous, in-process pipeline stages,
-PostgreSQL/Flyway persistence, configurable PEG-style ranking, and Excel export.
-Tests include fixture-driven source parsing and Testcontainers validation against
-PostgreSQL 17.
-
-Other repositories cover
-[Kafka Streams patterns](https://github.com/damian1000/kafka-streams-patterns),
-[real instrument quotes for the live order book](https://github.com/damian1000/market-data),
-[Dancing Links / Algorithm X](https://github.com/damian1000/sudoku-dancing-links),
-[proof-of-work and UTXO mechanics](https://github.com/damian1000/kotlin-blockchain),
-and a [bank CSV to QIF converter](https://github.com/damian1000/bank-csv-to-qif).
 
 ## Technology
 
