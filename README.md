@@ -47,12 +47,12 @@ Individually: [orderbook](https://github.com/damian1000/orderbook),
 Also: [portfolio-manager](https://github.com/damian1000/portfolio-manager) (dry-run-by-default
 exchange clients for Binance and Bitfinex) and
 [stocks-analysis-us](https://github.com/damian1000/stocks-analysis-us) (a six-stage
-fundamentals-ranking pipeline for US equities). Smaller repos cover
-[Kafka Streams patterns](https://github.com/damian1000/kafka-streams-patterns),
-[real instrument quotes](https://github.com/damian1000/market-data),
-[Dancing Links](https://github.com/damian1000/sudoku-dancing-links),
-[blockchain internals](https://github.com/damian1000/kotlin-blockchain), and a
-[bank CSV to QIF converter](https://github.com/damian1000/bank-csv-to-qif).
+fundamentals-ranking pipeline for US equities). Smaller repos:
+[kafka-streams-patterns](https://github.com/damian1000/kafka-streams-patterns),
+[market-data](https://github.com/damian1000/market-data),
+[sudoku-dancing-links](https://github.com/damian1000/sudoku-dancing-links),
+[kotlin-blockchain](https://github.com/damian1000/kotlin-blockchain), and
+[bank-csv-to-qif](https://github.com/damian1000/bank-csv-to-qif).
 
 ## AI-Assisted Engineering
 
