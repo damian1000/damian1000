@@ -40,13 +40,15 @@ codebase.
 
 **▶ Explore it live: https://desk.damianhoward.com**
 
-**How it fits together:** two threads run through the five repos. The data thread —
-`market-data` anchors `orderbook`'s book to a real price; every match publishes a fill to Kafka;
-`trading-system` consumes that stream, books the position, and reprices it by calling
-`risk-engine` as a library. The presentation thread — `trading-desk` reverse-proxies
-`orderbook`'s live book, `risk-engine`'s own interactive pricer, and `trading-system`'s dashboard
-as tabs in one shell, so the whole platform is one browser tab instead of four.
+**How it fits together:** a data pipeline and a presentation layer. Data: `market-data` anchors
+`orderbook`'s book to a real price; every match publishes a fill to Kafka; `trading-system`
+consumes that stream, books the position, and reprices it by calling `risk-engine` as a library.
+Presentation: `trading-desk` reverse-proxies `orderbook`'s live book, `risk-engine`'s own
+interactive pricer, and `trading-system`'s dashboard as tabs in one shell, so the whole platform
+is one browser tab instead of four.
 
+- **[trading-desk](https://github.com/damian1000/trading-desk)** — the link above: a
+  reverse-proxy gateway and the single entry point into the three live services.
 - **[market-data](https://github.com/damian1000/market-data)** — pulls real quotes from Yahoo
   Finance and serves the last-good snapshot, so a transient provider failure never blanks the
   live book it feeds.
@@ -61,8 +63,6 @@ as tabs in one shell, so the whole platform is one browser tab instead of four.
   fill stream off Kafka, books net positions into an Oracle Autonomous Database, reprices through
   `risk-engine`, and pushes live positions, VaR, and PnL to a dashboard. Poison messages route to
   a dead-letter topic after bounded retries.
-- **[trading-desk](https://github.com/damian1000/trading-desk)** — the reverse-proxy gateway
-  above; the single entry point into the three live services.
 
 ## Other Engineering Work
 
