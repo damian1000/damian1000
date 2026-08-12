@@ -1,0 +1,26 @@
+name: Lint
+
+# This repository holds the profile README and nothing else, so it has no build and never runs
+# the shared CI workflow. That left the most-read page in the estate as the one public history
+# with no check on it at all. This is that check, and it is deliberately the only one: the README
+# is reviewed by eye before every merge, so a formatter here would gate prose on a tool rather
+# than on the reading.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # the attribution scan below reads the whole history
+
+      - name: Check for AI attribution in history
+        uses: damian1000/.github/.github/actions/attribution-scan@main
