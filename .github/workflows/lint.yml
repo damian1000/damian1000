@@ -23,4 +23,4 @@ jobs:
           fetch-depth: 0 # the attribution scan below reads the whole history
 
       - name: Check for AI attribution in history
-        uses: damian1000/.github/.github/actions/attribution-scan@main
+        uses: damianhoward/.github/.github/actions/attribution-scan@main
